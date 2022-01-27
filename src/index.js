@@ -13,5 +13,6 @@ console.log(mult(7,10))
 // document.getElementById("root").appendChild(h1);
 
 ReactDOM.render(
-    React.cloneElement("h1",{className:"greencolor"},"Hello React") //(element,object(or key-value pair),another object or plane text)
-)
+    React.cloneElement("h1",{className:"redText"},"Hello React"), //(element,object(or key-value pair),another object or plane text)
+    document.getElementById("root")//where to render
+);
