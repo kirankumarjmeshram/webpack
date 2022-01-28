@@ -1,18 +1,55 @@
-//const mult = require("./calc")
-import {add,mult} from "./calc"
+
+import image from "./img/notepad-plus-plus.png";
 import("./index.css");
 
-import React from "react";
-import ReactDOM from "react-dom";
+let root = document.getElementById("root");
+let navbar = document.createElement("div");
+navbar.id = "navbar";
 
-console.log(mult(7,10))
+let logo_pic = document.createElement("img");
+logo_pic.src = image;
 
-// const h1 = document.createElement("h1");
-// h1.innerHTML = "Hello Webpack";
-// h1.classList.add("redtext");
-// document.getElementById("root").appendChild(h1);
+let app_name = document.createElement("h3");
+app_name.innerText = "note book";
 
-ReactDOM.render(
-    React.cloneElement("h1",{className:"redText"},"Hello React"), //(element,object(or key-value pair),another object or plane text)
-    document.getElementById("root")//where to render
-);
+navbar.append(logo_pic,app_name);
+
+let div = document.createElement("div");
+let div1 = document.createElement("div");
+let notes = document.createElement("p");
+notes.id="notes";
+
+div1.append(notes);
+div.append(div1);
+
+let div2 = document.createElement("div");
+let textArea = document.createElement("textarea");
+textArea.id ="inputText";
+
+div2.append(textArea);
+div.append(div2);
+
+root.append(navbar,div);
+
+let outputText = document.getElementById("notes");
+outputText.innerText="Enter notes";
+
+let inputText = document.getElementById("inputText");
+
+textArea.addEventListener("input",copyNotes);
+
+function copyNotes(){
+        outputText.innerText=inputText.value;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
